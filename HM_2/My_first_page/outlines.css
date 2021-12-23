@@ -1,0 +1,59 @@
+body {
+  min-width: 560px;
+  font-size: 16px;
+  color: white ;
+  line-height: 32px;
+  text-align: center;
+  background-image: url("source/space.jpg");
+  background-color:;
+}
+.page-header {
+  margin: 0 0 50px;
+  padding: 32px 0 32px;
+}
+.page-header a {
+  color: #fea18d;;
+  margin-left: 20px;
+  text-decoration: none;
+  background-position: right;
+  }
+.header-email {
+  padding-left: 30px;
+  color: red;
+  /*background-image: url("/source/email3.png");*/
+  
+}
+.header-phone {
+  padding-left: 25px;
+}
+.page-header {
+  font-size: 14px;
+  color: red;
+  text-decoration: ;
+}
+.heading {
+  margin: 0 0 24px;
+  font-size: 80px;
+  line-height: 96px;
+}
+.hero-image {
+    font-size: 32px;
+  line-height: 48px;
+}
+ ul {
+  display: block;
+}
+footer {
+  color: red;
+  margin-left: 20px;
+  text-decoration: none;
+  background-position: right;
+  }
+
+  .page-footer a {
+  margin-left: 56px;
+  color: #fea18d;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: left;
+}
