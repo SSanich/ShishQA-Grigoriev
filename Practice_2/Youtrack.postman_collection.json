@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "4596983e-e3a4-4f55-a695-1b5158451403",
+		"name": "Youtrack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "issue list",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer 1641467437157.662f61fa-e74c-403f-b831-0898988d73b8.c7f88c35-49c7-4a7d-be50-59f6995d41d0.662f61fa-e74c-403f-b831-0898988d73b8 6f514028-72e3-4085-bd95-506a008aafb0 0-0-0-0-0;1.MC0CFGPgfZJkeanZ+i2Z/+0gBuPvuzLxAhUAg3DNgMjn+UO+XyXElFI7D4Ii4A4=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssanich.youtrack.cloud/api/issues",
+					"protocol": "https",
+					"host": [
+						"ssanich",
+						"youtrack",
+						"cloud"
+					],
+					"path": [
+						"api",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "issue fields",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sanich.grig@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://89.223.126.182:8080/api/issues/2-840?fields=bundle(values(id,name,$type),aggregatedUsers(id,name,$type))",
+					"protocol": "http",
+					"host": [
+						"89",
+						"223",
+						"126",
+						"182"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"issues",
+						"2-840"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "bundle(values(id,name,$type),aggregatedUsers(id,name,$type))"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "projects",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1641468765190.662f61fa-e74c-403f-b831-0898988d73b8.c7f88c35-49c7-4a7d-be50-59f6995d41d0.662f61fa-e74c-403f-b831-0898988d73b8 6f514028-72e3-4085-bd95-506a008aafb0 0-0-0-0-0;1.MC0CFQCNqcZYgGFtQJO3EEVrFF8JsH+hhgIUW1yIyIxibCNsKvs85bLhK3t9UJE=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssanich.youtrack.cloud/api/admin/projects?fields=id,name,shortName",
+					"protocol": "https",
+					"host": [
+						"ssanich",
+						"youtrack",
+						"cloud"
+					],
+					"path": [
+						"api",
+						"admin",
+						"projects"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "id,name,shortName"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "создать задачу",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sanich.grig@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer perm:amFuZS5kb2U=.UkVTVCBBUEk=.wcKuAok8cHmAtzjA6xlc4BrB4hleaX"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"project\":{\"id\":\"0-4\"},\n\"summary\":\"Саныч\",\n\"description\":\" Тесты\"\n}"
+				},
+				"url": {
+					"raw": "http://89.223.126.182:8080/api/issues",
+					"protocol": "http",
+					"host": [
+						"89",
+						"223",
+						"126",
+						"182"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test summary & descpiction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "request for test summer & description",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "найти задачу по полю",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "get status issue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
