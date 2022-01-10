@@ -1,0 +1,10 @@
+http://89.223.126.182:8080/issue/CALC-74
+http://89.223.126.182:8080/issue/CALC-75
+http://89.223.126.182:8080/issue/CALC-76
+http://89.223.126.182:8080/issue/CALC-77
+http://89.223.126.182:8080/issue/CALC-78
+http://89.223.126.182:8080/issue/CALC-79
+http://89.223.126.182:8080/issue/CALC-80
+http://89.223.126.182:8080/issue/CALC-81
+http://89.223.126.182:8080/issue/CALC-82
+http://89.223.126.182:8080/issue/CALC-83
